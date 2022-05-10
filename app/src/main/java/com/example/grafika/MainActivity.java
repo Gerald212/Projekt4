@@ -36,7 +36,10 @@ public class MainActivity extends AppCompatActivity {
         X = event.getX();
         Y = event.getY();
 
-        X = X / windowWidth;
+//        float temp = windowHeight - ((windowHeight/5)*2);
+        float temp = windowWidth - ((windowWidth/5)*2);
+
+        X = X / temp;
 
 
         Log.i("tag", "kliknieto");
