@@ -12,7 +12,8 @@ public class MainActivity extends AppCompatActivity {
     OpenGLView openGLView;
 
     private int windowHeight, windowWidth;
-    public static float r = 0.5f, g = 0.5f;
+    //public static float r = 0.5f, g = 0.5f;
+    public int X, Y;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,35 +29,29 @@ public class MainActivity extends AppCompatActivity {
         windowWidth = displayMetrics.widthPixels;
     }
 
-//    @Override
-//    public boolean onTouchEvent(MotionEvent event)
-//    {
-//        int x = (int)event.getX();
-//        int y = (int)event.getY();
-//
-//        String stateString, cordsString;
-//        Resources res = getResources();
-//
-//        //cordsString = res.getString(R.string.display_cords, x, y);
-//        //cordsTextView.setText(cordsString);
-//
-//        r = (float) x/windowWidth;
-//        g = (float) y/windowHeight;
-//
-////        switch (event.getAction()) {
-////            case MotionEvent.ACTION_DOWN:
-////                stateString = res.getString(R.string.display_state, "Down");
-////                stateTextView.setText(stateString);
-////                return true;
-////            case MotionEvent.ACTION_MOVE:
-////                stateString = res.getString(R.string.display_state, "Move");
-////                stateTextView.setText(stateString);
-////                return true;
-////            case MotionEvent.ACTION_UP:
-////                stateString = res.getString(R.string.display_state, "Up");
-////                stateTextView.setText(stateString);
-////                return true;
-////        }
-//        return false;
-//    }
+    @Override
+    public boolean onTouchEvent(MotionEvent event)
+    {
+        X = (int)event.getX();
+        Y = (int)event.getY();
+
+        String stateString, cordsString;
+        Resources res = getResources();
+
+//        switch (event.getAction()) {
+//            case MotionEvent.ACTION_DOWN:
+//                stateString = res.getString(R.string.display_state, "Down");
+//                stateTextView.setText(stateString);
+//                return true;
+//            case MotionEvent.ACTION_MOVE:
+//                stateString = res.getString(R.string.display_state, "Move");
+//                stateTextView.setText(stateString);
+//                return true;
+//            case MotionEvent.ACTION_UP:
+//                stateString = res.getString(R.string.display_state, "Up");
+//                stateTextView.setText(stateString);
+//                return true;
+//        }
+        return false;
+    }
 }
