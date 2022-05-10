@@ -36,11 +36,19 @@ public class MainActivity extends AppCompatActivity {
         X = event.getX();
         Y = event.getY();
 
-//        float temp = windowHeight - ((windowHeight/5)*2);
-        float temp = windowWidth - ((windowWidth/5)*2);
+        float temp = windowHeight - ((windowHeight/5));
+        //float temp = windowHeight - ((windowHeight*0.2f));
 
-        X = X / temp;
+        //to chyba nie
+        //float temp = windowWidth - ((windowWidth*0.6f)/2);
 
+        X = (X / temp) - 1;
+
+        if(X < -0.4f){
+            X = -0.4f;
+        }else if(X > 0.4f){
+            X = 0.4f;
+        }
 
         Log.i("tag", "kliknieto");
 
