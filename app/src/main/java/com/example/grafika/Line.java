@@ -1,6 +1,7 @@
 package com.example.grafika;
 
 import android.opengl.GLES20;
+import android.util.Log;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -44,8 +45,7 @@ public class Line {
     private final int vertexCount = lineCoords.length / COORDS_PER_VERTEX;
     private final int vertexStride = COORDS_PER_VERTEX * 4; // 4 bytes per vertex
 
-    public void draw(float X) {
-        this.x = X;
+    public void draw() {
 
         // Add program to OpenGL ES environment
         GLES20.glUseProgram(mProgram);
@@ -78,6 +78,8 @@ public class Line {
     float color[] = { 0f, 0f, 0f, 1.0f };
 
     public Line() {
+        lineCoords[3] = MainActivity.X;
+
         // initialize vertex byte buffer for shape coordinates
         ByteBuffer bb = ByteBuffer.allocateDirect(
                 // (# of coordinate values * 4 bytes per float)

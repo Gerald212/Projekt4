@@ -16,7 +16,7 @@ public class OpenGLRenderer implements GLSurfaceView.Renderer {
     public void onSurfaceCreated(GL10 gl10, javax.microedition.khronos.egl.EGLConfig eglConfig) {
         GLES20.glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
         mySquare = new Square();
-        myLine = new Line();
+
     }
 
     @Override
@@ -26,12 +26,13 @@ public class OpenGLRenderer implements GLSurfaceView.Renderer {
 
     @Override
     public void onDrawFrame(GL10 gl) {
+        myLine = new Line();
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
         //float r = MainActivity.r;
         //float g = MainActivity.g;
         GLES20.glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
         mySquare.draw();
-        myLine.draw(MainActivity.X);
+        myLine.draw();
     }
 
     public static int loadShader(int type, String shaderCode){

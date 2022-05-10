@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.MotionEvent;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private int windowHeight, windowWidth;
     //public static float r = 0.5f, g = 0.5f;
-    public static int X, Y;
+    public static float X, Y;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +33,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onTouchEvent(MotionEvent event)
     {
-        X = (int)event.getX();
-        Y = (int)event.getY();
+        X = event.getX();
+        Y = event.getY();
+
+        X = X / windowWidth;
+
+
+        Log.i("tag", "kliknieto");
 
         String stateString, cordsString;
         Resources res = getResources();
+
+
 
 //        switch (event.getAction()) {
 //            case MotionEvent.ACTION_DOWN:
