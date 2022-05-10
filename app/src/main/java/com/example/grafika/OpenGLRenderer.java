@@ -10,13 +10,13 @@ import javax.microedition.khronos.opengles.GL10;
 public class OpenGLRenderer implements GLSurfaceView.Renderer {
 
     private Square mySquare;
+    private Line myLine;
 
     @Override
     public void onSurfaceCreated(GL10 gl10, javax.microedition.khronos.egl.EGLConfig eglConfig) {
-        GLES20.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+        GLES20.glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
         mySquare = new Square();
-
-
+        myLine = new Line();
     }
 
     @Override
@@ -31,6 +31,7 @@ public class OpenGLRenderer implements GLSurfaceView.Renderer {
         //float g = MainActivity.g;
         GLES20.glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
         mySquare.draw();
+        myLine.draw(MainActivity.X);
     }
 
     public static int loadShader(int type, String shaderCode){

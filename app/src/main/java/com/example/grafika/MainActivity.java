@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     private int windowHeight, windowWidth;
     //public static float r = 0.5f, g = 0.5f;
-    public int X, Y;
+    public static int X, Y;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
